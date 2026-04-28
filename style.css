@@ -146,6 +146,12 @@ span {
     box-shadow: none;
 }
 
+.btn-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .home-img .img-box {
     width: 35vw;
     height: 35vw;
@@ -367,6 +373,48 @@ span {
 }
 
 
+.events h2 {
+    margin-bottom: 5rem;
+}
+
+.events-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.events-container .event-box {
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.events-container .event-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.event-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+}
+
+.event-box h3 {
+    font-size: 2.6rem;
+    margin: 1rem 0;
+}
+
+.event-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
 .contact h2 {
     margin-bottom: 3rem;
 }
@@ -456,7 +504,7 @@ span {
         padding: 10rem 3% 2rem;
     }
 
-    .services {
+    .services, .events {
         padding-bottom: 7rem;
     }
 
