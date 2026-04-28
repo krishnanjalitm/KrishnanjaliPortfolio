@@ -44,12 +44,40 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
-// Form Submission Simulation
+// Form Submission Handling
 const contactForm = document.getElementById('contact-form');
+window.submitted = false; // Global flag for iframe onload
+
+window.showPopup = function() {
+    const popupOverlay = document.getElementById('popup-overlay');
+    if (popupOverlay) {
+        popupOverlay.classList.add('active');
+    }
+    if (contactForm) {
+        contactForm.reset();
+    }
+    window.submitted = false;
+};
+
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        // Allow the default form submission to the hidden iframe
+        window.submitted = true;
+    });
+}
+
+// Popup Close Logic
+const closePopupBtn = document.getElementById('close-popup');
+const popupOverlay = document.getElementById('popup-overlay');
+
+if (closePopupBtn && popupOverlay) {
+    closePopupBtn.addEventListener('click', () => {
+        popupOverlay.classList.remove('active');
+    });
+
+    popupOverlay.addEventListener('click', (e) => {
+        if (e.target === popupOverlay) {
+            popupOverlay.classList.remove('active');
+        }
     });
 }
