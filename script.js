@@ -81,3 +81,51 @@ if (closePopupBtn && popupOverlay) {
         }
     });
 }
+
+// Admin Login Logic
+const adminLoginBtn = document.getElementById('admin-login-btn');
+const adminOverlay = document.getElementById('admin-overlay');
+const closeAdminPopup = document.getElementById('close-admin-popup');
+const adminLoginSubmit = document.getElementById('admin-login-submit');
+const adminPasswordInput = document.getElementById('admin-password');
+const adminErrorMsg = document.getElementById('admin-error-msg');
+const adminSuccessBox = document.getElementById('admin-success-box');
+
+if (adminLoginBtn && adminOverlay) {
+    adminLoginBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        adminOverlay.classList.add('active');
+        // Reset state
+        adminPasswordInput.style.display = 'block';
+        adminLoginSubmit.style.display = 'block';
+        adminPasswordInput.value = '';
+        adminErrorMsg.style.display = 'none';
+        adminSuccessBox.style.display = 'none';
+    });
+
+    closeAdminPopup.addEventListener('click', () => {
+        adminOverlay.classList.remove('active');
+    });
+
+    adminOverlay.addEventListener('click', (e) => {
+        if (e.target === adminOverlay) {
+            adminOverlay.classList.remove('active');
+        }
+    });
+
+    adminLoginSubmit.addEventListener('click', () => {
+        const correctPassword = "admin"; // Default password
+        
+        if (adminPasswordInput.value === correctPassword) {
+            // Hide input and button
+            adminPasswordInput.style.display = 'none';
+            adminLoginSubmit.style.display = 'none';
+            adminErrorMsg.style.display = 'none';
+            
+            // Show success box
+            adminSuccessBox.style.display = 'block';
+        } else {
+            adminErrorMsg.style.display = 'block';
+        }
+    });
+}

@@ -213,7 +213,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-text">
-            <p>Copyright &copy; 2026 by Krishnanjali T M | All Rights Reserved.</p>
+            <p>Copyright &copy; 2026 by Krishnanjali T M | All Rights Reserved. | <a href="#" id="admin-login-btn" style="color: var(--main-color);">Admin</a></p>
         </div>
         <div class="footer-iconTop">
             <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
@@ -227,6 +227,24 @@
             <h2>Thank You!</h2>
             <p>Your message has been sent successfully. I will get back to you soon.</p>
             <button class="btn" id="close-popup">Close</button>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="popup-overlay" id="admin-overlay">
+        <div class="popup" style="max-width: 400px;">
+            <i class='bx bx-lock-alt'></i>
+            <h2>Admin Access</h2>
+            <p style="margin-bottom: 2rem;">Enter password to view messages.</p>
+            <input type="password" id="admin-password" placeholder="Password" style="width: 100%; padding: 1.5rem; font-size: 1.6rem; color: var(--text-color); background: var(--bg-color); border-radius: .8rem; margin-bottom: 2rem; border: .1rem solid transparent;">
+            <button class="btn" id="admin-login-submit" style="width: 100%;">Login</button>
+            <p class="error-msg" id="admin-error-msg" style="color: #ff4d4d; font-size: 1.4rem; margin-top: 1.5rem; display: none;">Incorrect password.</p>
+            <div class="success-box" id="admin-success-box" style="display: none; margin-top: 2rem;">
+                <i class='bx bx-check-circle' style="color: #00ff00; font-size: 4rem; display: block; margin: 0 auto 1rem;"></i>
+                <h3 style="font-size: 2.2rem; color: var(--text-color);">Access Granted</h3>
+                <a href="https://docs.google.com/spreadsheets/d/1Zss_Ac34WIL-HTRGqBk4RXMxeRbYYDMJL3BxXonddU0/edit?usp=sharing" target="_blank" style="color: var(--main-color); font-size: 1.6rem; text-decoration: underline; display: block; margin-top: 1rem;">Open Messages Dashboard</a>
+            </div>
+            <button class="btn" id="close-admin-popup" style="margin-top: 2rem; background: transparent; color: var(--text-color); border: .1rem solid var(--main-color); width: 100%;">Cancel</button>
         </div>
     </div>
 
